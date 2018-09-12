@@ -19,8 +19,10 @@ public class TestController {
     @ResponseBody
     public String getIp() throws UnknownHostException {
         InetAddress addr = InetAddress.getLocalHost();
-        String ip = addr.getHostAddress().toString(); //获取本机ip
-        String hostName = addr.getHostName().toString(); //获取本机计算机名称
+        //获取本机ip
+        String ip = addr.getHostAddress();
+        //获取本机计算机名称
+        String hostName = addr.getHostName();
         System.out.println(ip);
         System.out.println(hostName);
         return "ip:" + ip + "\n\r hostname:" + hostName;
