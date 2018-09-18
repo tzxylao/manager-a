@@ -1,5 +1,6 @@
 package com.tzxylao.manager.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +14,7 @@ import java.net.UnknownHostException;
  */
 @Controller
 @RequestMapping("/test")
+@Slf4j
 public class TestController {
 
     @RequestMapping("/ip")
@@ -25,6 +27,7 @@ public class TestController {
         String hostName = addr.getHostName();
         System.out.println(ip);
         System.out.println(hostName);
+        log.info("ip:" + ip);
         return "ip:" + ip + "\n\r hostname:" + hostName;
     }
 }
