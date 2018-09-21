@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="${basePath!}/static/logo.png">
+    <link rel="icon" href="${basePath!}/static/logo.jpg">
     <link rel="stylesheet" href="${basePath!}/static/layui/css/layui.css" media="all"/>
     <link rel="stylesheet" href="${basePath!}/static/css/index.css" media="all"/>
 
@@ -75,7 +75,7 @@
                     <a href="javascript:"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
                 </li>
                 <li class="layui-nav-item" id="userInfo">
-                    <a href="javascript:"><img src="${basePath!}/static/logo.png" class="layui-nav-img userAvatar"
+                    <a href="javascript:"><img src="${basePath!}/static/logo.jpg" class="layui-nav-img userAvatar"
                                                width="35" height="35"><cite class="adminName">
                         <div id="userInfoId"></div>
                     </cite></a>
@@ -92,7 +92,7 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像"><img src="${basePath!}/static/logo.png" class="userAvatar"></a>
+            <a class="img" title="我的头像"><img src="${basePath!}/static/logo.jpg" class="userAvatar"></a>
             <p>你好！<span class="userName">${currentUser.trueName!}</span>, 欢迎登录</p>
         </div>
 
@@ -319,7 +319,7 @@
                 title: false,
                 type: 1,
                 content: '<div class="admin-header-lock" id="lock-box">' +
-                '<div class="admin-header-lock-img"><img src="${basePath!}/static/logo.png" class="userAvatar"/></div>' +
+                '<div class="admin-header-lock-img"><img src="${basePath!}/static/logo.jpg" class="userAvatar"/></div>' +
                 '<div class="admin-header-lock-name" id="lockUserName">${currentUser.trueName!}</div>' +
                 '<div class="input_btn">' +
                 '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />' +
