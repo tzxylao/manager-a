@@ -39,9 +39,9 @@
             </encoder>
         </appender>
         <appender name="mqAppender1" class="org.apache.rocketmq.logappender.logback.RocketmqLogbackAppender">
-            <tag>TagA</tag>
-            <topic>TopicTest</topic>
-            <producerGroup>please_rename_unique_group_name</producerGroup>
+            <tag>log</tag>
+            <topic>manager-a</topic>
+            <producerGroup>managerGroup</producerGroup>
             <nameServerAddress>i.tzxylao.com:9876</nameServerAddress>
             <layout>
                 <pattern>%date %p %t - %m%n</pattern>
@@ -60,7 +60,7 @@
         <root level="info">
             <appender-ref ref="PROD_FILE"/>
             <appender-ref ref="CONSOLE"/>
-            <appender-ref ref="mqAppender1"/>
+            <appender-ref ref="mqAsyncAppender1"/>
         </root>
 
     </springProfile>

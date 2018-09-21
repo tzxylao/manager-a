@@ -1,8 +1,8 @@
 package com.tzxylao.manager.aop;
 
+import com.tzxylao.manager.entity.ResponseResult;
 import com.tzxylao.manager.enums.ExceptionEnum;
 import com.tzxylao.manager.exception.NoFoundExcepiton;
-import com.tzxylao.manager.pojo.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.MissingServletRequestParameterException;
