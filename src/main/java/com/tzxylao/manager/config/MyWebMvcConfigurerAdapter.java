@@ -22,6 +22,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
         registry.addViewController("/error/errordeal").setViewName("error/errordealogin");
         registry.addViewController("/error/unauthorized").setViewName("error/unauthorized");
         registry.addViewController("/main").setViewName("main");
+        registry.addViewController("/tree/treeMenu").setViewName("tree/treeMenu");
         super.addViewControllers(registry);
     }
 
