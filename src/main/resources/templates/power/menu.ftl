@@ -78,7 +78,7 @@
                         },
                         success: function (data) {
                             if (data.state == 'fail') {
-                                layer.open({
+                                /*layer.open({
                                     skin: 'layui-layer-molv',
                                     type: 1,
                                     area: "20%",
@@ -88,6 +88,12 @@
                                         layer.close(layerid);
                                         window.location.reload();//刷新框架
                                     }
+                                });*/
+                                layer.msg(data.mesg, {
+                                    icon: 5,
+                                    time: 2000
+                                }, function(){
+                                    layer.close(layerid);
                                 });
                                 return false;
                             }
@@ -146,7 +152,7 @@
                 },
                 success: function (data) {
                     if (data.state == 'fail') {
-                        layer.open({
+                        /*layer.open({
                             skin: 'layui-layer-molv',
                             type: 1,
                             area: "20%",
@@ -156,11 +162,18 @@
                                 layer.close(layerid);
                                 window.location.reload();//刷新框架
                             }
+                        });*/
+
+                        layer.msg(data.mesg, {
+                            icon: 5,
+                            time: 2000
+                        }, function(){
+                            layer.close(layerid);
                         });
                         return false;
                     }
                     if (data.state == 'success') {
-                        layer.open({
+                        /*layer.open({
                             skin: 'layui-layer-molv',
                             type: 1,
                             area: "20%",
@@ -170,8 +183,13 @@
                                 layer.close(layerid);
                                 window.parent.location.reload();//刷新框架
                             }
+                        });*/
+                        layer.msg(data.mesg, {
+                            icon: 6,
+                            time: 2000
+                        }, function(){
+                            layer.close(layerid);
                         });
-
                     }
                 }
             });
@@ -247,7 +265,7 @@
                 },
                 success: function (data) {
                     if (data.state == 'fail') {
-                        layer.open({
+                        /*layer.open({
                             skin: 'layui-layer-molv',
                             type: 1,
                             area: "20%",
@@ -257,10 +275,16 @@
                                 layer.close(layerid);
                                 window.location.reload();//刷新框架
                             }
+                        });*/
+                        layer.msg(data.mesg, {
+                            icon: 5,
+                            time: 2000
+                        }, function(){
+                            layer.close(layerid);
                         });
                     }
                     if (data.state == 'success') {
-                        layer.open({
+                        /*layer.open({
                             skin: 'layui-layer-molv',
                             type: 1,
                             area: "20%",
@@ -270,6 +294,12 @@
                                 layer.close(layerid);
                                 window.parent.location.reload();//刷新框架
                             }
+                        });*/
+                        layer.msg(data.mesg, {
+                            icon: 6,
+                            time: 2000
+                        }, function(){
+                            layer.close(layerid);
                         });
 
                     }
