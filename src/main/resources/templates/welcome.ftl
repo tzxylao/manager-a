@@ -155,6 +155,7 @@
 
 <script type="text/javascript" src="${basePath!}/static/layui/layui.js"></script>
 <script type="text/javascript" src="${basePath!}/static/js/cache.js"></script>
+<script type="text/javascript" src="${basePath!}/static/js/sha256.js"></script>
 
 
 <#--把index.js提到页面中，为了使用freemarker-->
@@ -353,7 +354,7 @@
                 layer.msg("请输入解锁密码！");
                 $(this).siblings(".admin-header-lock-input").focus();
             } else {
-                if ($(this).siblings(".admin-header-lock-input").val() == "${currentUser.password!string}") {
+                if (sha256_digest($(this).siblings(".admin-header-lock-input").val()) == "${currentUser.password!string}") {
                     window.sessionStorage.setItem("lockcms", false);
                     $(this).siblings(".admin-header-lock-input").val('');
                     layer.closeAll("page");
