@@ -1,6 +1,9 @@
 package com.tzxylao.manager.controller;
 
+import com.tzxylao.manager.hystrix.IpHystrixCommand;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,9 +21,20 @@ import java.net.UnknownHostException;
 @Slf4j
 public class TestController {
 
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
+
     @RequestMapping("/ip")
     @ResponseBody
     public String getIp(HttpServletRequest request) throws UnknownHostException {
+        IpHystrixCommand command = new IpHystrixCommand(request,redisTemplate);
+        String execute = command.execute();
+        return execute;
+    }
+
+    @RequestMapping("/ip2")
+    @ResponseBody
+    public String getIp2(HttpServletRequest request) throws UnknownHostException {
         InetAddress addr = InetAddress.getLocalHost();
         //获取本机ip
         String ip = addr.getHostAddress();
@@ -35,6 +49,7 @@ public class TestController {
         log.info("HostAddress:" + inetAddress.getHostAddress());
         String auth = request.getHeader("Authorization");
         log.info("Authorization:" + auth);
+//        Thread.sleep(300);
         return "ip:" + ip + "\n\r hostname:" + hostName;
     }
 }
